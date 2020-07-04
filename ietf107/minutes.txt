@@ -1,0 +1,230 @@
+MASQUE BoF
+😷
+
+Introduction, wherein we try to figure out how Preview works with WebEx.
+
+Slides: https://datatracker.ietf.org/meeting/107/materials/slides-107-masque-masque-master-slide-deck-02
+
+Agenda bashing, introduction, meeting format (5 mins)
+==========
+Chairs (Jana and Chris)
+
+Chris: Plan for the BoF. The problem statement is based on David Schinazi's initial proposal.
+Mirja and Alex will fill in use cases. Some use cases already have deployed solutions relevant
+to MASQUE.
+
+Problem statement and MASQUE framework (David Schinazi, 20 mins)
+==========
+
+David:
+    Problem statement: today, proxies can have various benefits. They can connect disjoint networks, provide VPN encryption, and modify congestion control.
+    For the purposes of this discussion, proxy is a broad term that includes VPNs and similar solutions. These have inner and outer connections.
+
+    Proxies today include:
+        - HTTP proxies (GET, POST, etc);
+        - HTTP CONNECT proxies (only works on TCP right now);
+        - SOCKS (cleartext, has multiple RTTS);
+        - Tunnel-mode IPsec (requires high privilege on most systems);
+        - Transparent TCP proxy (on path proxy only)
+
+    QUIC and HTTP/3 are now becoming more deployed, but it doesn't work with many of these solutions. It encrypts its transport, and doesn't use TCP.
+    QUIC also provides nice benefits *as* a proxy protocol, such as multiplexing support and unreliable datagram frames. HTTP/3 provides useful requesting, caching, and auth.
+    Both inner and outer proxy connections can be QUIC. That's the big idea.
+
+    The "MASQUE Framework" is a solution that runs multiple networking applications within an HTTP/3 connection.
+    Not all traffic needs to use the same proxy protocol; you can use HTTP CONNECT within QUIC, or a new solution for QUIC, or IP forwarding for VPN in general.
+    Use one encryption context for the outer QUIC connection
+    Starts with HTTP POST within HTTP/3.
+        Client sends list of supported MASQUE applications
+        Server replies with accepted list
+
+Christian: Do you have thoughts on the resources required of a MASQUE server? e.g. how many ports in can open or how many simultaneous clients
+David: I would say this is a property of each application. For example QUIC Proxying as defined today uses a single port.
+
+Mark: I think this is generally good. One question: for use of POST, is this a handwave prototype or a real proposal?
+David: Yes, I need a request reponse, and that sounded like a natural fit. Not set in stone.
+
+Martin: Appreciate that protocol bits aren't set in stone. Which parts of the applications are most important--tcp, udp, quic--which is most important to you?
+David: QUIC relaying will make a big difference to avoid doing an IP level tunnel, for perf. IP level forwarding is also important for the VPN use case. Other people have different focuses.
+
+ekr: Martin's question touches on some text in the charter that I'd like to discuss.
+Chris/Jana: Let's discuss that later
+
+Spencer: There's a chat in the Jabber room about proxy vs relay vs ???. It'd be good to be aware of that as we think in this space.
+David: Every networking term is so overloaded, so the terms may not be the best.
+
+Use-Cases (Mirja Kühlewind, 15 mins)
+==========
+
+Mirja:
+    Similar to David's diagram, we have a tunnel between a client and MASQUE server, with inner traffic that goes beyond.
+    Hides inner traffic from observer. Traffic should not "stick out".
+    A trusted relationship between client and MASQUE server would need authentication, etc
+    The client IP address is also hidden from the end servers.
+
+    MASQUE server can provide extended services, such as (for example) doing proxied DNS resolution.
+
+    Related work is draft-piraux-quic-tunnel. That's a multihoming solution in which there is a concentrator aggregating traffic. 
+
+Chairs:
+    Another related piece of work is QBONE (QUIC-based Overlay Network Environment)
+Alex:
+    Google global cache uses a VPN type solution called QBONE. We used HTTP proxying before, but that had issues.
+    ISPs filtered very heavily, so IPsec was problematic. QUIC allowed us to do a VPN that got through more networks.
+    A VPN client uses a local tap/tun interface to make a QUIC VPN to the Google network.
+    QUIC was useful for pluggable congestion control. Disabled congestion control and reliability for inner traffic.
+    Uses ALTS for authentication.
+    Using this for 100s of Gbps of traffic, for past two years
+Jana: This could move to MASQUE eventually
+
+Chris: Thanks for raising the various use cases. Some are simple, some are likely too complex, but they show good motivation.
+Some of these knobs could be done later (such as congestion control changes)
+
+
+Requirements (chairs🪑🪑, 10 minutes)
+==========
+
+Chris: We've been trying to build a list of requirements for the fundamental form of MASQUE:
+    1. Proxy negotiation should not be easily visible on the wire. The connection shouldn't "stick out" via a cleartext signal.
+    2. The client must choose into using the proxy. This cannot be forced on a client by something on-path.
+    3. Usage of MASQUE needs to be negotiated by the client through the proxy.
+    4. Proxying needs to work for both streams and datagrams (of various layers)
+    5. The security of the inner connections is entirely independent of the connection to the MASQUE server.
+
+    Bootstrapping for this system is out of scope for the group.
+
+Martin: Question on requirement 1. If you have a motivated attacker who can see both sides of the connection, they can see the link between both sides. Do you describe your goals here in a document?
+Chris: No document yet. I think we're only looking at the attacker between the client and the MASQUE server. Beyond that, we aren't trying to hide more.
+David: For documents, we have the charter and individual proposals. My document does discuss this a bit. We want that an on-path observer shouldn't be able to tell that certain traffic is being proxied.
+Traffic analysis is a large concern, but we're mainly looking at low hanging fruit.
+
+Chris: Would it help to have a more clearly state threat model?
+Martin: I mainly just wanted to know what analysis we'd already done.
+
+Mo: Are we assuming the client can be behind a NAT, but the server won't be? Is it also the intent to provide STUN-like capabilities?
+David: My assumption is that the server isn't behind a NAT, and what is on the other side as the server should also be easily accessible. Not trying to rebuild TURN.
+
+Christian: What dependency do you have on SNI encryption?
+Chris: I don't think we have such a dependency at this point; just on QUIC.
+David: ESNI/ECHO can make things better, but those aren't requirements. We only need QUIC/HTTP3 and QUIC datagrams.
+
+Charter discussion (chairs🪑🪑, 45 mins)
+==========
+
+Chris: Motivation; why QUIC, and primary goals. (See slides)
+Requesting input
+
+Tommy: Using DoH as an example, we did need to talk about bootstrapping/discovery later, but we had URI templates. It seems like a description of a MASQUE server would be useful.
+Chris: That sounds reasonable.
+
+Mark Nottingham : Looking at this, I don't know if this is a new protocol. You'd be able to get many of the properties that you want if you have the right extensions/generic mechanisms. CONNECT is a bit of a mess, and we're trying to sort that out. The result would leave you with a small spec.
+David: Some parts of this could be solved at the HTTP layer. The goal isn't to change HTTP semantics. We do have use cases that aren't at all about HTTP, like ICMP over this, so we do want something beyond an HTTP spec.
+Mark: I think an unreliable CONNECT would be sufficient.
+Mirja: I agree that the CONNECT method could provide much of this. HTTP CONNECT is a bit of a hack, though, just to indicate forwarding. Some of the use cases here aren't HTTP specific.
+Mark: Is this an HTTP extension? It seems like it is right now. Or is this a new QUIC protocol? On top of QUIC or on top of HTTP/3?
+Mirja: On top of QUIC. The proxying is on QUIC. HTTP/3 is just for hiding.
+Mark: Is it multiplexed with HTTP/3?
+David: This is an open question. We can look at it multiple ways. I don't have an answer yet.
+Mark: I think we need to decide this before chartering
+
+Suresh: The proposed charter does say that it will coordinate with groups like HTTPBIS and QUIC.
+Mark: That's good, but these changes are invasive, so we need to work out the close coordination.
+
+Martin: First line of the charter says proxying is good, but doesn't say why. We need to explain what proxying properties we want (privacy, etc).
+(Audio was lost) Just say no to frameworks.
+If we are changing anything in H3, we need to say this is H3. This needs to be coordinated very closely with HTTPBIS.
+
+ekr: Mark said some of what I wanted to say. I envisioned this as "super-CONNECT" or "unreliable-CONNECT". I'm much less enthusiastic about the application-specific stuff like DNS. Just do UDP/TCP. This should be a modest extension to HTTP/3. This sounds relatively small.
+David: I agree that this isn't that much work to add these items. If we build this as the current MASQUE proposal or a new HTTP method, I think we should decide that as a WG. UDP CONNECT may be enough for some use cases but not for all. We don't need to nail this down today.
+ekr: Yes and no. You may need IP CONNECT. But the charter implies the service is specific to QUIC and HTTP. I think the complexity added by doing native QUIC proxying should not exist.
+Mirja: When you want "super-CONNECT" do you care that it is HTTP-based?
+ekr: For many cases, we can get by with TURN. This is TURN with different spelling. It's better in that people already run HTTP/3 servers. Having this be some other non-HTTP/3 thing seems bad. I also don't see any way to not stick out without being HTTP/3.
+
+Bernard Aboba: We've talked about the framework, but I think we need to talk about the protocols we support through this down the road. Until we know what applications we're going to support, it's hard to know what we need. Do we want TOR on this? Some protocols, like DNS, are other places. Some work, like the tunnelling, isn't already somewhere else. Which parts would go in this working group?
+David: The main deliverable would be the framework, with a small set of applications to start with. Once we're there, we could define new ones if needed later.
+
+Ben Schwartz: All I want is IP over web transport. It could be really simple like that.
+David: As both working on MASQUE and WEBTRANS, there are a lot of similarities. They both ferry things on top of QUIC. WebTransport wants to allow things over the Web, evolving from WebSocket (Javascript in browser). What you want as a VPN shouldn't be in the browser.
+Ben: I'm not saying we need this in Javascript.
+
+Ted Hardie : I don't think the motivation actually does motivate why this protocol needs to do any more than a CONNECT proxy (with applications). It seems like we have three different uses here--forwarding, DNS, etc. It's trying to deliver both the framework and divergent use cases. Is this a VPN or a proxy?
+Mirja: We had similar discussions initially. We don't want to have too many different solutions for the same area overlapping.
+
+Spencer: Being crisp about what this is most like up front in the charter is important. For discovery being out of scope, I'd feel better if we had an idea of what mechanisms would be used. I don't want this to just be host.txt to configure. I'd like something like what I view MASQUE as to go forward.
+
+Carrick Bartle: Is the benefit of this over QUIC-in-QUIC to have compression? Is there an extra round trip we're adding here?
+David: This largely is QUIC-in-HTTP/3. There's no way to ask a HTTP/3 to send QUIC traffic to another server.
+Mirja: The extra round trip is not required.
+
+Jonathan Lennox: To what extent would TURN over QUIC or SOCKS6 over QUIC or WEBTRANS meet these requirements? Let's not reinvent the wheel.
+David: QUIC needs some changes to add support for it; it doesn't need to be a huge overhaul.
+
+Watson Ladd: What's the impact of congestion control? Given that the inner QUIC is encrypted, doesn't this only work when you have unreliable outer packets?
+Mirja: It depends on the scenario. For certain links, a reliable tunnel can occasionably be better.
+David: If you have TCP/IP/MASQUE(QUIC), you certainly don't want nested reliability. But nested congestion control isn't necessarily bad.
+
+Tommy: I think the WebTrans relationship does need to be spelled out, and make sure a unified solution could be created.
+
+Mark: Responding to Ben saying HTTP WG won't deliver arbitrary IP packets—I don't see why not.
+
+Cullen: This is not just a proxy, it's also a NAT. I think the charter needs to say more about who can send packets back into the tunnel (can I run a server inside this tunnel, etc). The charter thinks about this as only client-initiated.
+David: Good point. I don't know it needs to be in the charter, but does need to be in the documents.
+Cullen: We should at least say if we expect it to be in scope or not.
+
+BoF questions (chairs🪑🪑, 30 minutes)
+==========
+
+Chris:
+    Is the scope of the problem well-defined and well-understood?
+
+ekr: I came into this thinking it was well-understood and small. The question of if we can do a server is a real scope question. I think it shouldn't be in scope. If you do, get up now.
+Mark: I agree with ekr. The abstractions need to be nailed down. We need to nail down if this is HTTP extension or QUIC extension.
+Ben: The scope is clearly not universally well-understood. We don't need the layering necessarily, but we do need to say if it can run alongside HTTP/3.
+Watson: I think the scope of the problem needs more clarity (raw forwarding, proxying different layers). Is it a menu of options, etc.
+Martin: One comment earlier that got cut off was that we probably don't need a framework at all. The discussion of frameworks makes me deeply concerned. I think it should be jettisoned. Specifically, discovering and selecting capabilities, presumably to share signalling between different proxy layers.
+David: I meant "multiplexing"
+Martin: That makes way more sense.
+Mike Bishop: I think there are many scenarios, and we don't need to solve all of them--since solving some will help you solve others. The scope seems over-broad. You could just have a new protocol and use ECHO to hide your protocol.
+Chris: The end solution could be a simple proxying protocol here, yes. Cutting line.
+
+    Who is willing to review documents and comment?
+    Who is willing to be an editor?
+    Please indicate in the chat if you do.
+    from EKR to Everyone:    5:04  PM I have an interest in reviewing and maybe editing
+    from David Oliver to Everyone:    5:04  PM +1 document review, use case definition
+    from Mike Bishop to Everyone:    5:04  PM +1, review docs
+    from Eric Kinnear to Everyone:    5:04  PM +1
+    from DAN DRUTA to Everyone:    5:04  PM +1
+    from Ben Schwartz to Everyone:    5:04  PM +1
+    from Marcus Ihlar to Everyone:    5:04  PM +1
+    from Sean Turner (iPhone) to Everyone:    5:04  PM +1
+    from Jari Arkko to Everyone:    5:05  PM +1 review
+    from Tiesel, Philipp to Everyone:    5:05  PM +1 review
+    from Florin Baboescu to Everyone:    5:05  PM +1 review/write
+    from Mirja Kuehlewind to Everyone:    5:04  PM +1, write/edit and review
+    from Magnus Westerlund to Everyone:    5:06  PM +1 review and contribute.
+    from Joe Salowey to Everyone:    5:04  PM +1,
+    from spencerdawkins.ietf@gmail.com to Everyone:    5:04  PM +1 review
+    from Lucas Pardue to Everyone:    5:05  PM +1
+    from Chris Seal to Everyone:    5:05  PM +1
+    from Mark Nottingham to Everyone:    5:06  PM +1 review and contribute
+    from Stephen Farrell to Everyone:    5:05  PM +jabber:-)
+    from Christian to Everyone:    5:05  PM +1 review
+    from Zaheduzzaman Sarker to Everyone:    5:06  PM +1 contribute and review
+    from Marcus Ihlar to Everyone:    5:06  PM +1 contribute and review
+    from Stephen Farrell to Everyone:    5:06  PM +1 review and hold you all back with silly comments
+    from Erik Nygren to Everyone:    5:07  PM +1 contribute and review
+
+
+Ted: I don't think we should form a group until we know the scope of the work; it may be multiple groups, or it may live in other working group(s)
+Spencer: Agreed with Ted
+Mark: +1 to Ted. I can't evaluate this charter in this state. Not clear it needs any working group or a big effort.
+
+Jana: Thanks, that's coming through loud and clear.
+
+Martin: Let's work out the charter on the list. Let's not meet again like this.
+
+Suresh: Thanks everyone. Clear that there's lack of clarity in the charter, and there's a good community to work on this space.
+We need to scope things down. Let's do that on the mailing list. We did this in INT because of tunnelling, but we'll see where it goes.
+
+Chairs: Thanks! We'll see you on the list.

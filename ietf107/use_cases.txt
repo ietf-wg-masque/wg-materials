@@ -1,0 +1,20 @@
+Subject: Call for MASQUE use cases
+
+~~~
+
+The core MASQUE protocol [1] describes a simple negotiation mechanism for various 
+applications. However, it omits use cases for these applications. MASQUE obfuscation
+in support of a "hidden VPN" service is one use case [2]. Tunneling QUIC is another [3].
+
+Given that MASQUE and the upcoming BoF will be successful insofar as it addresses important 
+use cases, I think it'd be useful to discuss these application use cases in more detail 
+before Vancouver. To that end, let's use this time before the meeting to discuss them! 
+
+I'd like to ask interested parties to please surface use cases they know of (and care about). 
+
+Thanks!
+Chris
+
+[1] https://tools.ietf.org/html/draft-schinazi-masque-02
+[2] https://tools.ietf.org/html/draft-schinazi-masque-obfuscation-00
+[3] https://tools.ietf.org/html/draft-kuehlewind-quic-substrate-02
