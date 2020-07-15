@@ -15,7 +15,7 @@
 * Agenda Bashing
 
 ### I-D Presentations
-* CONNECT-UDP (https://tools.ietf.org/html/draft-schinazi-masque-connect-udp-00)
-* IP proxying requirements (https://tools.ietf.org/html/draft-cms-masque-ip-proxy-reqs-00)
-* Transport considerations for IP and UDP Proxying (https://tools.ietf.org/html/draft-westerlund-masque-transport-issues-00)
-* QUIC Proxying (N/A)
+* [CONNECT-UDP](https://tools.ietf.org/html/draft-schinazi-masque-connect-udp-00), David Schinazi
+* [IP proxying requirements](https://tools.ietf.org/html/draft-cms-masque-ip-proxy-reqs-00), Dallas McCall
+* [Transport considerations for IP and UDP Proxying](https://tools.ietf.org/html/draft-westerlund-masque-transport-issues-00), Magnus Westerlund 
+* QUIC Proxying, Tommy Pauly
