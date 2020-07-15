@@ -1,5 +1,3 @@
-# MASQUE Working Group Agenda - IETF 108 Online
-
 * [Jabber chat](xmpp:masque@jabber.ietf.org?join)
 * [Meetecho](http://www.meetecho.com/ietf108/masque) remote participation
 * Minutes TBD
