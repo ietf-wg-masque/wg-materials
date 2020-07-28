@@ -21,6 +21,6 @@
 |------|--------------------------------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------|
 | 20m  | CONNECT-UDP                                      | David Schinazi    | [draft-schinazi-masque-connect-udp-00](https://tools.ietf.org/html/draft-schinazi-masque-connect-udp-00)               |
 | 20m  | IP Proxying Requirements                         | Dallas McCall     | [draft-cms-masque-ip-proxy-reqs-00](https://tools.ietf.org/html/draft-cms-masque-ip-proxy-reqs-00)                     |
-| 20m  | Transport Considerations for IP and UDP Proxying | Magnus Westerlund | [draft-westerlund-masque-transport-issues-00](https://tools.ietf.org/html/draft-westerlund-masque-transport-issues-00) |
 | 20m  | QUIC Proxying                                    | Tommy Pauly       | [Slides](https://www.ietf.org/proceedings/108/slides/slides-108-masque-optimizing-proxies-for-quic-00)                 |
+| 20m  | Transport Considerations for IP and UDP Proxying | Magnus Westerlund | [draft-westerlund-masque-transport-issues-00](https://tools.ietf.org/html/draft-westerlund-masque-transport-issues-00) |
 
