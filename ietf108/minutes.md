@@ -18,8 +18,11 @@ masque@ietf.org
 Note Well
 https://datatracker.ietf.org/submit/note-well/
 
+WG Materials
+https://github.com/ietf-wg-masque/wg-materials/tree/master/ietf108
 
-[Jabber Logs](https://codimd.ietf.org/s/ry5SScaxP) ([edit](https://codimd.ietf.org/mULDu7HXRzGNL50_F2UHow))
+
+Jabber Logs ([CodiMD](https://codimd.ietf.org/s/ry5SScaxP) | [edit](https://codimd.ietf.org/mULDu7HXRzGNL50_F2UHow)) ([GitHub](https://github.com/ietf-wg-masque/wg-materials/blob/master/ietf108/jabber.md))
 
 
 ## CONNECT-UDP
