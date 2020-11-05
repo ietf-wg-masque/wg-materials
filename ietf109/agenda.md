@@ -20,8 +20,8 @@
 ## Working Group documents
 
 * CONNECT-UDP - David Schinazi (30 minutes)
-* IP Proxying Requirements - David Schinazi (30 minutes)
+* IP Proxying Requirements - Dallas McCall (30 minutes)
 
 ## Individual documents
 
-* QUIC Proxying (draft-pauly-masque-quic-proxy) - Tommy Pauly (15 minutes)
+* QUIC-Aware Proxying Using CONNECT-UDP (draft-pauly-masque-quic-proxy) - Tommy Pauly (15 minutes)
