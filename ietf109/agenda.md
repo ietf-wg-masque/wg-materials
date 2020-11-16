@@ -1,9 +1,8 @@
 # MASQUE Working Group Agenda - IETF 109 Online
 
-* [Jabber chat](xmpp:masque@jabber.ietf.org?join)
-* [Meetecho TBD](https://meetings.conf.meetecho.com/ietf109/?group=masque&short=&item=1)
+* [Jabber Chat](xmpp:masque@jabber.ietf.org?join)
+* [Meetecho](https://meetings.conf.meetecho.com/ietf109/?group=masque&short=&item=1)
 * [Minutes](https://codimd.ietf.org/notes-ietf-109-masque)
-
 
 ## Friday, November 20, 2020 (UTC)
 **9:00-11:00 (UTC), Friday Session III**
@@ -14,15 +13,16 @@
 
 * Scribe Selection / [Note Well](https://www.ietf.org/about/note-well.html)
 * Agenda Bashing
-* Interop Results
+* Interop Results - Lucas Pardue
 
 ### Presentations
 
 ## Working Group documents
 
-* CONNECT-UDP - David Schinazi (30 minutes)
-* IP Proxying Requirements - Dallas McCall (30 minutes)
+* CONNECT-UDP ([draft-ietf-masque-connect-udp](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-udp/))- David Schinazi (30 minutes)
+* IP Proxying Requirements ([draft-ietf-masque-ip-proxy-reqs](https://datatracker.ietf.org/doc/draft-ietf-masque-ip-proxy-reqs/)) - Dallas McCall (30 minutes)
 
 ## Individual documents
 
-* QUIC-Aware Proxying Using CONNECT-UDP (draft-pauly-masque-quic-proxy) - Tommy Pauly (15 minutes)
+* QUIC-Aware Proxying Using CONNECT-UDP ([draft-pauly-masque-quic-proxy](https://datatracker.ietf.org/doc/draft-pauly-masque-quic-proxy/)) - Tommy Pauly (15 minutes)
+* CONNECT-IP Proposal ([draft-kuehlewind-masque-connect-ip](https://datatracker.ietf.org/doc/draft-kuehlewind-masque-connect-ip/)) - Mirja Kuehlewind (20 minutes)
