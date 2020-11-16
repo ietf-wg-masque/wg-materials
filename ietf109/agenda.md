@@ -25,4 +25,4 @@
 #### Individual documents
 
 * QUIC-Aware Proxying Using CONNECT-UDP ([draft-pauly-masque-quic-proxy](https://datatracker.ietf.org/doc/draft-pauly-masque-quic-proxy/)) - Tommy Pauly (15 minutes)
-* CONNECT-IP Proposal ([draft-kuehlewind-masque-connect-ip](https://datatracker.ietf.org/doc/draft-kuehlewind-masque-connect-ip/)) - Mirja Kuehlewind (20 minutes)
+* Additional IP Proxying Requirement Considerations - Mirja Kuehlewind (20 minutes)
