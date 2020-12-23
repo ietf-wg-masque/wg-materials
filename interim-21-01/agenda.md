@@ -5,9 +5,9 @@
 * [Minutes](https://codimd.ietf.org/notes-ietf-masque-interim-21-01)
 
 ## Tuesday, January 12, 2020 (UTC)
-**19:00-21:00 (UTC)**
+**22:00-23:59 (UTC)**
 
-[See this time in your local timezone](https://www.timeanddate.com/worldclock/fixedtime.html?msg=IETF+MASQUE+Virtual+Interim+-+January+2020&iso=20210112T19&p1=1440&ah=2)
+[See this time in your local timezone](https://www.timeanddate.com/worldclock/fixedtime.html?msg=IETF+MASQUE+Virtual+Interim+-+January+2020&iso=20210112T22&p1=1440&ah=2)
 
 ### Housekeeping
 
