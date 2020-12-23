@@ -1,7 +1,7 @@
 # IETF MASQUE Working Group Agenda - Virtual Interim - January 2021
 
 * [Jabber Chat](xmpp:masque@jabber.ietf.org?join)
-* [WebEx - Link TBD]
+* [WebEx](https://ietf.webex.com/ietf/j.php?MTID=m60be159911993f0a28d72228e878299a)
 * [Minutes](https://codimd.ietf.org/notes-ietf-masque-interim-21-01)
 
 ## Tuesday, January 12, 2020 (UTC)
