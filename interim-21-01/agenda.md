@@ -27,3 +27,4 @@
 
 * QUIC-Aware Proxying Using CONNECT-UDP ([draft-pauly-masque-quic-proxy](https://datatracker.ietf.org/doc/draft-pauly-masque-quic-proxy/)) - Tommy Pauly (15 minutes)
 * Additional IP Proxying Requirement Considerations - Mirja Kuehlewind (20 minutes)
+* Using QUIC Datagrams with HTTP/3 ([draft-schinazi-masque-h3-datagram](https://tools.ietf.org/html/draft-schinazi-masque-h3-datagram)) - Lucas Pardue (15 minutes)
