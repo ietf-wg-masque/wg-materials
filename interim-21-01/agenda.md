@@ -13,6 +13,7 @@
 
 * Scribe Selection / [Note Well](https://www.ietf.org/about/note-well.html)
 * Agenda Bashing
+* Github usage and draft status
 
 ### Presentations
 
