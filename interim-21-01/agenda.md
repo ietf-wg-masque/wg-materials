@@ -17,15 +17,17 @@
 
 ### Presentations
 
-#### Working Group Documents
+#### Working Group Documents (and Dependencies)
 
-* CONNECT-UDP ([draft-ietf-masque-connect-udp](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-udp/))
+* UDP Proxying
+	* Using QUIC Datagrams with HTTP/3 ([draft-schinazi-masque-h3-datagram](https://tools.ietf.org/html/draft-schinazi-masque-h3-datagram)) - Lucas Pardue
+	* CONNECT-UDP ([draft-ietf-masque-connect-udp](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-udp/)) - David Schinazi
 	* GitHub Issue Discussion
-* IP Proxying Requirements ([draft-ietf-masque-ip-proxy-reqs](https://datatracker.ietf.org/doc/draft-ietf-masque-ip-proxy-reqs/))
+* IP Proxying
+	* IP Proxying Requirements ([draft-ietf-masque-ip-proxy-reqs](https://datatracker.ietf.org/doc/draft-ietf-masque-ip-proxy-reqs/)) - Alex Chernyakhovsky
 	* GitHub Issue Discussion
 
 #### As Time Permits
 
 * QUIC-Aware Proxying Using CONNECT-UDP ([draft-pauly-masque-quic-proxy](https://datatracker.ietf.org/doc/draft-pauly-masque-quic-proxy/)) - Tommy Pauly (15 minutes)
 * Additional IP Proxying Requirement Considerations - Mirja Kuehlewind (20 minutes)
-* Using QUIC Datagrams with HTTP/3 ([draft-schinazi-masque-h3-datagram](https://tools.ietf.org/html/draft-schinazi-masque-h3-datagram)) - Lucas Pardue (15 minutes)
