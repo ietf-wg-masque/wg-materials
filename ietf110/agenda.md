@@ -20,6 +20,7 @@
 #### Working Group documents (as much time as needed)
 
 * CONNECT-UDP ([draft-ietf-masque-connect-udp](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-udp/))- David Schinazi
+* HTTP/3 Datagrams ([draft-ietf-masque-h3-datagram](https://datatracker.ietf.org/doc/draft-ietf-masque-h3-datagram/))- Lucas Pardue
 * IP Proxying Requirements ([draft-ietf-masque-ip-proxy-reqs](https://datatracker.ietf.org/doc/draft-ietf-masque-ip-proxy-reqs/)) - Dallas McCall
 
 #### Individual documents (time remaining)
