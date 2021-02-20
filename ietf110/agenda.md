@@ -5,7 +5,7 @@
 * [Minutes](https://codimd.ietf.org/notes-ietf-110-masque)
 
 ## Tuesday, March 9, 2021 (UTC)
-**17:00-19:00 (UTC), Friday Session III**
+**17:00-19:00 (UTC), Tuesday Session III**
 
 [See this time in your local timezone](https://www.timeanddate.com/worldclock/fixedtime.html?msg=MASQUE+-+IETF+110&iso=20210309T17&p1=1440&ah=2)
 
