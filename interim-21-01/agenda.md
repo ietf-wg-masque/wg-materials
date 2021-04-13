@@ -4,7 +4,7 @@
 * [WebEx](https://ietf.webex.com/ietf/j.php?MTID=m60be159911993f0a28d72228e878299a) (Meeting Number: 178 573 8261, Meeting Password: JXuMYDG7h23)
 * [Minutes](https://codimd.ietf.org/notes-ietf-masque-interim-21-01)
 
-## Tuesday, January 12, 2020 (UTC)
+## Tuesday, January 12, 2021 (UTC)
 **22:00-23:59 (UTC)**
 
 [See this time in your local timezone](https://www.timeanddate.com/worldclock/fixedtime.html?msg=IETF+MASQUE+Virtual+Interim+-+January+2020&iso=20210112T22&p1=1440&ah=2)
