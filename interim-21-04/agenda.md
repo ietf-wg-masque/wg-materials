@@ -18,12 +18,11 @@
 
 #### Working Group Documents
 
-* HTTP/3 Datagrams ([draft-ietf-masque-h3-datagram](https://datatracker.ietf.org/doc/draft-ietf-masque-h3-datagram/)) - David Schinazi
-* CONNECT-UDP ([draft-ietf-masque-connect-udp](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-udp/)) - David Schinazi
-* IP Proxying Requirements ([draft-ietf-masque-ip-proxy-reqs](https://datatracker.ietf.org/doc/draft-ietf-masque-ip-proxy-reqs/)) - Alex Chernyakhovsky
+* HTTP/3 Datagrams, CONNECT-UDP ([draft-ietf-masque-h3-datagram](https://datatracker.ietf.org/doc/draft-ietf-masque-h3-datagram/), [draft-ietf-masque-connect-udp](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-udp/)) - David Schinazi
+* IP Proxying Requirements ([draft-ietf-masque-ip-proxy-reqs](https://datatracker.ietf.org/doc/draft-ietf-masque-ip-proxy-reqs/)) - David Schinazi
 
 #### As Time Permits
 
 * QUIC-Aware Proxying Using CONNECT-UDP ([draft-pauly-masque-quic-proxy](https://datatracker.ietf.org/doc/draft-pauly-masque-quic-proxy/)) - Tommy Pauly
 * The CONNECT-IP method for proxying IP traffic ([draft-kuehlewind-masque-connect-ip-00](https://datatracker.ietf.org/doc/draft-kuehlewind-masque-connect-ip/)) - Mirja Kuehlewind
-* The CONNECT-IP HTTP Method ([draft-cms-masque-connect-ip-00](https://datatracker.ietf.org/doc/draft-cms-masque-connect-ip/)) - Alex Chernyakhovsky/Dallas McCall
+* The CONNECT-IP HTTP Method ([draft-cms-masque-connect-ip-00](https://datatracker.ietf.org/doc/draft-cms-masque-connect-ip/)) - Alex Chernyakhovsky
