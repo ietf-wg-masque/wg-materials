@@ -20,5 +20,7 @@
 * QUIC-Aware Proxying Using CONNECT-UDP ([draft-pauly-masque-quic-proxy](https://datatracker.ietf.org/doc/draft-pauly-masque-quic-proxy/)) - Tommy Pauly (15 minutes)
 * IP Proxying Requirements ([draft-ietf-masque-ip-proxy-reqs](https://datatracker.ietf.org/doc/draft-ietf-masque-ip-proxy-reqs/)) - David Schinazi (20 minutes)
 * Requirements Document Remaining Items - Chairs (10 minutes)
+
+#### As Time Permits
 * The CONNECT-IP method for proxying IP traffic ([draft-kuehlewind-masque-connect-ip-00](https://datatracker.ietf.org/doc/draft-kuehlewind-masque-connect-ip/)) - Mirja Kuehlewind (10 minutes)
 * The CONNECT-IP HTTP Method ([draft-cms-masque-connect-ip-00](https://datatracker.ietf.org/doc/draft-cms-masque-connect-ip/)) - Alex Chernyakhovsky (10 minutes)
