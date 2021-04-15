@@ -16,9 +16,9 @@
 
 ### Presentations
 
-* HTTP/3 Datagrams, CONNECT-UDP ([draft-ietf-masque-h3-datagram](https://datatracker.ietf.org/doc/draft-ietf-masque-h3-datagram/), [draft-ietf-masque-connect-udp](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-udp/)) - David Schinazi (40 minutes)
+* HTTP/3 Datagrams, CONNECT-UDP ([draft-ietf-masque-h3-datagram](https://datatracker.ietf.org/doc/draft-ietf-masque-h3-datagram/), [draft-ietf-masque-connect-udp](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-udp/)) - David Schinazi (60 minutes)
 * QUIC-Aware Proxying Using CONNECT-UDP ([draft-pauly-masque-quic-proxy](https://datatracker.ietf.org/doc/draft-pauly-masque-quic-proxy/)) - Tommy Pauly (15 minutes)
-* IP Proxying Requirements ([draft-ietf-masque-ip-proxy-reqs](https://datatracker.ietf.org/doc/draft-ietf-masque-ip-proxy-reqs/)) - David Schinazi (20 minutes)
+* IP Proxying Requirements ([draft-ietf-masque-ip-proxy-reqs](https://datatracker.ietf.org/doc/draft-ietf-masque-ip-proxy-reqs/)) - David Schinazi (15 minutes)
 * Requirements Document Remaining Items - Chairs (10 minutes)
 
 #### As Time Permits
