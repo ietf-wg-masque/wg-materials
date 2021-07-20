@@ -24,8 +24,9 @@
 
 ## CONNECT-IP Proposals
 
-- Proposal 1: [The CONNECT-IP HTTP Method](https://datatracker.ietf.org/doc/draft-cms-masque-connect-ip/)
-- Proposal 2: [The CONNECT-IP HTTP method for proxying IP traffic](https://datatracker.ietf.org/doc/draft-kuehlewind-masque-connect-ip/)
+- Proposal 1: [The CONNECT-IP HTTP Method](https://datatracker.ietf.org/doc/draft-cms-masque-connect-ip/) (15 minutes)
+- Proposal 2: [The CONNECT-IP HTTP method for proxying IP traffic](https://datatracker.ietf.org/doc/draft-kuehlewind-masque-connect-ip/) (15 minutes)
+- Discussion (15 minutes)
 
 ## New Work (as time permits)
 
