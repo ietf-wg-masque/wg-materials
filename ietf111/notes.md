@@ -160,63 +160,63 @@ Notes:
 * New feature for identifying inbound(?) packets
 * Open issue when it comes to ECN support for flow forwarding mode
 
-Ekr: how do I ask the proxy where to egress traffic?
-Mirja: If you want egress in the US, choose a US proxy
-(obvious confusion)
-Magnus Westerlund: You get an IP from the proxy, you then use that as your source address for packets that you send over the tunnel.
+* Ekr: how do I ask the proxy where to egress traffic?
+* Mirja: If you want egress in the US, choose a US proxy
+* (obvious confusion)
+* Magnus Westerlund: You get an IP from the proxy, you then use that as your source address for packets that you send over the tunnel.
 
 Mirja: the tunnel mode needs that the client be trusted by the proxy
 * No route negotiation because the proxy will know where the client is able to go, this might be outside of the protocol or a property of the resource (not in the draft)
 * Flow forwarding is like CONNECT-UDP and this is just extra overhead and you can do other protocols
 
-David Schinazi: consumer VPN, point-to-network, network-to-network; if I wanted a VPN, how does this draft ensure that you get split tunnel mode?
-Mirja: you get that
-David: how does that get signaled?
-Mirja: the client needs to know
-David: That is not how I would expect a point-to-network design to work (IPsec etc...)
+* David Schinazi: consumer VPN, point-to-network, network-to-network; if I wanted a VPN, how does this draft ensure that you get split tunnel mode?
+* Mirja: you get that
+* David: how does that get signaled?
+* Mirja: the client needs to know
+* David: That is not how I would expect a point-to-network design to work (IPsec etc...)
 
-Ekr: What is flow forwarding mode for?
-Mirja: similar to CONNECT-UDP, just a little more information and you get reduced overheads, works for anything that is per-flow/per-target
-Ekr: why would I choose to implement this in addition to an IP doodad?  If I don't have CONNECT-UDP, why is this beneficial?
-Mirja: you might want to have some of the efficiency benefits and still control your outward IP, but also for non-UDP cases
-Ekr: Why not CONNECT (for TCP)?
-Mirja: Not if you want full e2e
+* Ekr: What is flow forwarding mode for?
+* Mirja: similar to CONNECT-UDP, just a little more information and you get reduced overheads, works for anything that is per-flow/per-target
+* Ekr: why would I choose to implement this in addition to an IP doodad?  If I don't have CONNECT-UDP, why is this beneficial?
+* Mirja: you might want to have some of the efficiency benefits and still control your outward IP, but also for non-UDP cases
+* Ekr: Why not CONNECT (for TCP)?
+* Mirja: Not if you want full e2e
 
-Sam Aldrin: do you need to maintain connection status on the proxy
-Mirja: you need state for every request
-Sam: how do you load balance proxy instances?
-Mirja: you connect to a specific proxy
-Sam: what if a server connects to a different proxy instance
-Mirja: the IP assignment for a tunnel needs to refer to a specific proxy instance
-Sam: you need connection symmetry: the traffic has to come back to the same proxy?
-Mirja: yes
+* Sam Aldrin: do you need to maintain connection status on the proxy
+* Mirja: you need state for every request
+* Sam: how do you load balance proxy instances?
+* Mirja: you connect to a specific proxy
+* Sam: what if a server connects to a different proxy instance
+* Mirja: the IP assignment for a tunnel needs to refer to a specific proxy instance
+* Sam: you need connection symmetry: the traffic has to come back to the same proxy?
+* Mirja: yes
 
-Tommy Pauly: flow forwarding seems attractive for a privacy proxy mode; unlike a VPN, I might not want a single IP assigned to my client.  The connect options allow the same IP address to be shared to provide better anonymity.  CONNECT-IP lets us do that, but it isn't a fully-fledged approach.  I think that it's worth having something like that.
-Mirja: that was a deliberate choice; this is e2e, but it is very similar in terms of usage to CONNECT-UDP
+* Tommy Pauly: flow forwarding seems attractive for a privacy proxy mode; unlike a VPN, I might not want a single IP assigned to my client.  The connect options allow the same IP address to be shared to provide better anonymity.  CONNECT-IP lets us do that, but it isn't a fully-fledged approach.  I think that it's worth having something like that.
+* Mirja: that was a deliberate choice; this is e2e, but it is very similar in terms of usage to CONNECT-UDP
 
-David: what problem does the flow mode solve?  Tommy's idea sounds just like a NAT.  What use cases in our requirements does the flow forwarding mode address?
-Mirja: This is NAT functionality, but the client has control over that.
-David: If we are discussing a proxying solution, the focus should be on use cases.  We removed stuff from our draft for that reason.  The stuff you seem to care about is not stuff we agreed.
-Mirja: this is just the point-to-point use case
-David: think IPsec (opposite of tunnel mode); the e2e connection goes from IPsec client to server directly; this seems more like a consumer VPN case
-Mirja: you can connect to a specific target in an outside network, but the proxy can see the flow, which allows the proxy to apply certain optimizations
-David: you seem to be adding solutions to problems that we haven't agreed to solve
-Mirja: flow forwarding is largely redundant to CONNECT-UDP, but the differences are very small
+* David: what problem does the flow mode solve?  Tommy's idea sounds just like a NAT.  What use cases in our requirements does the flow forwarding mode address?
+* Mirja: This is NAT functionality, but the client has control over that.
+* David: If we are discussing a proxying solution, the focus should be on use cases.  We removed stuff from our draft for that reason.  The stuff you seem to care about is not stuff we agreed.
+* Mirja: this is just the point-to-point use case
+* David: think IPsec (opposite of tunnel mode); the e2e connection goes from IPsec client to server directly; this seems more like a consumer VPN case
+* Mirja: you can connect to a specific target in an outside network, but the proxy can see the flow, which allows the proxy to apply certain optimizations
+* David: you seem to be adding solutions to problems that we haven't agreed to solve
+* Mirja: flow forwarding is largely redundant to CONNECT-UDP, but the differences are very small
 
-Tommy: Maybe we should not worry so much about process.  The earlier draft was more complete.  We don't want to lose that, but at the same time, it adds a lot of complexity that is only useful sometimes. this document can show us how to deliver valuable features with a simpler design.  you could build that with a more complex negotiation, assume that it has a NAT, and so forth.  There is value in a simpler case that allows for other IP protocols.  There is value in having the proxy do name resolution to reduce latency.  maybe those aren't in the requirements doc, but they are important for real world uses, especially for short-lived cases (ping this host).  let's keep the good bits of the other, but we shouldn't dismiss the benefits of this.  flow forwarding is the main use case that I want to adopt
-David: wasn't suggesting we dismiss
-Tommy: it seemed like that
-David: *throws process on the table*
-Tommy: this is a way to meet at least one of the requirements, but also efficient
-Mirja: would like to ensure that we end up with a single document
-Alex C: In this use case, we seemed to have missed it, but it is different than what I understood (?). A lot of that short-lived stuff happen in kernels. Want to understand what the requirements are.  Our design manages complexity; I think we can deal with these use cases with a simpler one-shot mode.
-Ekr: if I just want to ping, I can just do that with a single round trip?
-Mirja: I guess so ... ? (Tommy's use case)
-Ekr: Do I have to get an IP address if I don't care what it is.
-Mirja: In flow forwarding mode you can send data out directly.  Maybe also tunnel mode.
-Alex C: what is producing the packet?  The stack generally requires a source address.  Maybe with special logic at the proxy you might not care about the source IP.  That's more like CONNECT-PING than CONNECT-IP.
-Ekr: Maybe not caring about source IP isn't important; it's the extra RTT that matters.  Tommy seemed to care about getting an unlinkable IP addresses, which the "classic" setting doesn't provide.  That seems like an attractive property.
-Ekr: The chairs need to do some work here.  I don't want the next 6mo with each proposal working independently on copying stuff from each other.  Can we find a way forward that doesn't involve a beauty contest, but that's a chair job.
+* Tommy: Maybe we should not worry so much about process.  The earlier draft was more complete.  We don't want to lose that, but at the same time, it adds a lot of complexity that is only useful sometimes. this document can show us how to deliver valuable features with a simpler design.  you could build that with a more complex negotiation, assume that it has a NAT, and so forth.  There is value in a simpler case that allows for other IP protocols.  There is value in having the proxy do name resolution to reduce latency.  maybe those aren't in the requirements doc, but they are important for real world uses, especially for short-lived cases (ping this host).  let's keep the good bits of the other, but we shouldn't dismiss the benefits of this.  flow forwarding is the main use case that I want to adopt
+* David: wasn't suggesting we dismiss
+* Tommy: it seemed like that
+* David: *throws process on the table*
+* Tommy: this is a way to meet at least one of the requirements, but also efficient
+* Mirja: would like to ensure that we end up with a single document
+* Alex C: In this use case, we seemed to have missed it, but it is different than what I understood (?). A lot of that short-lived stuff happen in kernels. Want to understand what the requirements are.  Our design manages complexity; I think we can deal with these use cases with a simpler one-shot mode.
+* Ekr: if I just want to ping, I can just do that with a single round trip?
+* Mirja: I guess so ... ? (Tommy's use case)
+* Ekr: Do I have to get an IP address if I don't care what it is.
+* Mirja: In flow forwarding mode you can send data out directly.  Maybe also tunnel mode.
+* Alex C: what is producing the packet?  The stack generally requires a source address.  Maybe with special logic at the proxy you might not care about the source IP.  That's more like CONNECT-PING than CONNECT-IP.
+* Ekr: Maybe not caring about source IP isn't important; it's the extra RTT that matters.  Tommy seemed to care about getting an unlinkable IP addresses, which the "classic" setting doesn't provide.  That seems like an attractive property.
+* Ekr: The chairs need to do some work here.  I don't want the next 6mo with each proposal working independently on copying stuff from each other.  Can we find a way forward that doesn't involve a beauty contest, but that's a chair job.
 
 ===== TIME =====
 
