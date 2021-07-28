@@ -205,9 +205,7 @@ Mirja: the tunnel mode needs that the client be trusted by the proxy
 
 * Tommy: Maybe we should not worry so much about process.  The earlier draft was more complete.  We don't want to lose that, but at the same time, it adds a lot of complexity that is only useful sometimes. this document can show us how to deliver valuable features with a simpler design.  you could build that with a more complex negotiation, assume that it has a NAT, and so forth.  There is value in a simpler case that allows for other IP protocols.  There is value in having the proxy do name resolution to reduce latency.  maybe those aren't in the requirements doc, but they are important for real world uses, especially for short-lived cases (ping this host).  let's keep the good bits of the other, but we shouldn't dismiss the benefits of this.  flow forwarding is the main use case that I want to adopt
 * David: wasn't suggesting we dismiss
-* Tommy: it seemed like that
-* David: *throws process on the table*
-* Tommy: this is a way to meet at least one of the requirements, but also efficient
+* Tommy: it seemed like that. This is a way to meet at least one of the requirements, but also efficient
 * Mirja: would like to ensure that we end up with a single document
 * Alex C: In this use case, we seemed to have missed it, but it is different than what I understood (?). A lot of that short-lived stuff happen in kernels. Want to understand what the requirements are.  Our design manages complexity; I think we can deal with these use cases with a simpler one-shot mode.
 * Ekr: if I just want to ping, I can just do that with a single round trip?
