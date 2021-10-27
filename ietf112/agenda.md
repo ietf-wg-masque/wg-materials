@@ -22,11 +22,11 @@
 - [CONNECT-UDP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-udp/)
 - [HTTP/3 Datagrams](https://datatracker.ietf.org/doc/draft-ietf-masque-h3-datagram/)
 
-## CONNECT-IP (20 minutes)
+## CONNECT-IP (15 minutes)
 
 - [IP Proxying Support for HTTP](TBD)
 
-## New Work (35 minutes)
+## New Work (remaining)
 
 - [HTTP Datagram Prioritization](https://datatracker.ietf.org/doc/draft-pardue-masque-dgram-priority/)
-- [QUIC-Aware Proxying Using HTTP](https://datatracker.ietf.org/doc/draft-pauly-masque-quic-proxy)
+- [HTTP Datagram PING](https://datatracker.ietf.org/doc/draft-schwartz-masque-h3-datagram-ping/)
