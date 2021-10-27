@@ -28,5 +28,5 @@
 
 ## New Work (remaining)
 
-- [HTTP Datagram Prioritization](https://datatracker.ietf.org/doc/draft-pardue-masque-dgram-priority/)
 - [HTTP Datagram PING](https://datatracker.ietf.org/doc/draft-schwartz-masque-h3-datagram-ping/)
+- [HTTP Datagram Prioritization](https://datatracker.ietf.org/doc/draft-pardue-masque-dgram-priority/)
