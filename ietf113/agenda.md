@@ -24,6 +24,6 @@
 - [HTTP/3 Datagrams](https://datatracker.ietf.org/doc/draft-ietf-masque-h3-datagram/)
 - [CONNECT-UDP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-udp/)
 
-## CONNECT-IP (60 minutes)
+## CONNECT-IP (15 minutes)
 
 - [IP Proxying Support for HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-ip/)
