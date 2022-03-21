@@ -1,6 +1,7 @@
 # MASQUE @ IETF 113
 
 Monday, March 21, 2022, 13:30 - 15:30 (UTC), Monday Afternoon Session II
+
 Location: Grand Park Hall 1
 
 ## Administrivia (5 minutes)
@@ -10,18 +11,26 @@ Interop at Hackathon: fairly successful
 ## CONNECT-UDP and HTTP/3 Datagrams (60 minutes)
 
 Consensus from the interim now reflected in the drafts.
+
 Overview/reminder of the changes that went in.
+
 Extensibility/demultiplexing is/was one of the most controversial aspects of specs. Moved it out of H3 datagram and into higher-level docs such as CONNECT-UDP.
 
 ### HTTP/3 Datagrams
 
 We have no more issues in H3 datagrams, think it's ready for WGLC.
+
 No comments from anyone in disagreement.
+
 Mirja: should there be one draft that uses extensibility (but that's CONNECT-UDP, not DATAGRAM)
+
 Chairs to start WGLC right after this.
+
 Eric: is there anyone who thinks we shouldn't progress H3 datagram to WG last call, please speak now? 
 (resounding silence)
+
 Tommy: ready for WGLC; make sure httpbis also reviews
+
 Eric: yes we'll certainly do that
 
 ### CONNECT-UDP
