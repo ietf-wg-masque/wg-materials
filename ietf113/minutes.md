@@ -136,7 +136,7 @@ Martin D: I'm leaning towards GET. Seems like a bikeshed, maybe we can take it t
 
 PHB: I'm just wondering why you are doing HTTP/1.1 at all. It's complicated enough already. If people need to downgrade just let them decide how to do it on their own.
 
-Dave s: was clear consensus years ago to do 1.1. GET opponents seem to have acquiesced. So move forward with GET. Anyone can't live with that? 
+David S: was clear consensus years ago to do 1.1. GET opponents seem to have acquiesced. So move forward with GET. Anyone can't live with that? 
 
 David S: We have proposed resolutions to all open isses. Are we ready for WGLC?
 
