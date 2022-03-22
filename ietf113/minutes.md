@@ -42,31 +42,31 @@ Ben Schwartz: Iam one of the people that expressed some concern about this. I wr
 
 Ted Hardie: headers or capsules could be used. But pick one now and define it, while mentioning the other. State that this has worked out the issues that Ben mentioned. If somebody needs the other thing, they can base it on the base spec. If I were picking one, I would pick HTTP headers. You potentially won't be able to put this off for long. So I would do it now. In a different document would be ok.
 
-Dave S: I would prefer to put this in another document, but starting right away sounds great.
+David S: I would prefer to put this in another document, but starting right away sounds great.
 
 Mike Bishop: I feel somewhat hypocritical. H3 says figure it out but it suggests using a setting. I don't know how you can handwave it away, you don't have a setting. A seperate document would be fine but we should start it now.
 
-Dave S: in equivalence to settings, we have headers. Since capsules can be used after request or response, we can enable them via headers.
+David S: in equivalence to settings, we have headers. Since capsules can be used after request or response, we can enable them via headers.
 
 Marten Seemann: I'm wondering how extensions compose. You mention ECN bits. In the draft are timestamps. So one context ID for ECN, one ID for timestamps. Do I need another ID for both ECN and timestamps?
 
-Dave S: (yes, in more words)
+David S: (yes, in more words)
 
 Martin Duke: request/responses are pretty obvious but the downside is you can't use this in the first flight. I don't know if the server can accept them.
 
-Dave S: I think we have a solution for this already in the draft, I'll need to check. Previously known at 0-rtt extensibility. Client sends in first flight, the server can just ignore unsupported context IDs.
+David S: I think we have a solution for this already in the draft, I'll need to check. Previously known at 0-rtt extensibility. Client sends in first flight, the server can just ignore unsupported context IDs.
 
 Martin Duke: that sounds ok, but it can give you a 1-RTT penalty.
 
-Dave S: there used to be something in the draft. As a design team we decided it was too complicated and removed it from the draft.
+David S: there used to be something in the draft. As a design team we decided it was too complicated and removed it from the draft.
 
 ekr: (hard to hear in the room) on the topic of 0-rtt extensibility, unless you have mandatory extensions, the most you could possiblydo is announce them in the first flight. Perhaps you could have extension persistence. something somthing critical path
 
-Dave S: if its ciritical to have an extension in the first flight and that is not supported the datagram that uses it would be lost. You probably would want to avoid using such things in the first flight or pay the penalty.
+David S: if its ciritical to have an extension in the first flight and that is not supported the datagram that uses it would be lost. You probably would want to avoid using such things in the first flight or pay the penalty.
 
 ekr: You can't use extensions in the first flight if loss would be a big fail.
 
-Dave S: People are OK with this draft not defining this extension, but doing it in another draft.
+David S: People are OK with this draft not defining this extension, but doing it in another draft.
 
 #### Issue #58 Well-known prefix for default URI template
 
@@ -75,31 +75,31 @@ Should the URI template use .well-known, or a shorter path?
 Ben: I think using .well-known is the correct place
 MT (in jabber): +1
 
-Dave S.: /.well-known/masque/udp/{target_host}/{target_port}/ OK with everyone?
+David S: /.well-known/masque/udp/{target_host}/{target_port}/ OK with everyone?
 
 Rajeev RK: some proxies have special handling of .well-known addresses. Do you think this might interfere badly.
 
-Dave S: I don't know if I have a great intution of this. Gut feel is you probably need special handling for MASQUE so perhaps this aligns with what they do.
+David S: I don't know if I have a great intution of this. Gut feel is you probably need special handling for MASQUE so perhaps this aligns with what they do.
 
 Rajeev: Perhaps just adding some form of warning in the draft text to note the possbility would be good.
 
-Dave S: sure. Unless anyone objects. I'll make a PR. 
+David S: sure. Unless anyone objects. I'll make a PR. 
 
 #### Issue #57 HTTP/1.1 Method for Upgrade
 
-Dave S.: CONNECT or GET? httpbis didn't care. So let's use GET to avoid deployment concerns. Any thoughts or opinions?
+David S: CONNECT or GET? httpbis didn't care. So let's use GET to avoid deployment concerns. Any thoughts or opinions?
 
 MT: Cacheable by default, could cause caching errors
 
-Dave S: caching is a real concern
+David S: caching is a real concern
 
 Lucas: It would also exist for Websockets. Asymmetry for H1 vs 2/3. Caches really should look at the Upgrade header. CONNECT is just weird and will be a mess in 1.1. But whatever.
 
-Dave S. A box that doesn't support this will probably just result in a cached 404.
+David S: A box that doesn't support this will probably just result in a cached 404.
 
 ekr: What is the scenario that creates a problem?
 
-Dave S. Say the proxy doesn't support MASQUE. Least dramatic way for it to fail?
+David S: Say the proxy doesn't support MASQUE. Least dramatic way for it to fail?
 
 ekr: Then don't do that!
 
@@ -107,13 +107,13 @@ Rajeev: Edge devices have different security rules for GET and CONNECT. CONNECT 
 
 Erik Nygren: Multi-tenant services might like POST better?
 
-Dave S: I don't have a 3 sided coin. Speaking for me, we are probably never going to support the HTTP/1.1. version. I don't care much for the answer but lets pick one.
+David S: I don't have a 3 sided coin. Speaking for me, we are probably never going to support the HTTP/1.1. version. I don't care much for the answer but lets pick one.
 
-Dave S. objections to POST?
+David S: objections to POST?
 
 ekr: Yes. We have a thing for this: CONNECT. Why overload GET or POST?
 
-Dave S: if something sits in the middle they might handle things differently; might not control their own backend where they run 1.1.
+David S: if something sits in the middle they might handle things differently; might not control their own backend where they run 1.1.
 
 MT:  I think what I'm hearing is that people are saying CONNECT plus Upgrade, we don't know what will happen and it might explode
 Anything other than CONNECT is OK.
@@ -130,7 +130,7 @@ Lucas: CONNECT is bad because its spec says what unsupporting servers should do.
 
 Tommy: I've been convinced we should just go with GET. I'm not convinced the overhead of a new method is worth it. We are not seeing compelling evidence that the HTTP/1.1 approach will be widely used.
 
-Dave S: agree
+David S: agree
 
 Martin D: I'm leaning towards GET. Seems like a bikeshed, maybe we can take it to the list
 
@@ -138,11 +138,11 @@ PHB: I'm just wondering why you are doing HTTP/1.1 at all. It's complicated enou
 
 Dave s: was clear consensus years ago to do 1.1. GET opponents seem to have acquiesced. So move forward with GET. Anyone can't live with that? 
 
-Dave S: We have proposed resolutions to all open isses. Are we ready for WGLC?
+David S: We have proposed resolutions to all open isses. Are we ready for WGLC?
 
 Eric: WGLC seems appropriate after these issues are closed.
 
-Dave S: WGLC also motivates people to read the drafts.
+David S: WGLC also motivates people to read the drafts.
 
 ## CONNECT-IP (15 minutes)
 
