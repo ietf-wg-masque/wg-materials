@@ -274,8 +274,3 @@ ekr: two networks tied together use case. If there are a bunch of devices all us
 
 Martin Duke: I concede the point.
 
-
-### IP Proxying
-Support for HTTP
-
-
