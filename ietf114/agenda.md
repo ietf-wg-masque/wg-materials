@@ -27,6 +27,7 @@
 
 - [HTTP Access Service Description Objects](https://datatracker.ietf.org/doc/draft-schwartz-masque-access-descriptions/)
 - [HTTP Datagram PING and TIMESTAMP](https://datatracker.ietf.org/doc/draft-schwartz-masque-h3-datagram-ping/)
+- [Proxying Listener UDP in HTTP](https://datatracker.ietf.org/doc/draft-schinazi-connect-udp-listen/)
 
 ## Recharter discussion (Time remaining)
 
