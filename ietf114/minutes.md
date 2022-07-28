@@ -100,7 +100,7 @@
 ## HTTP Access Service Description Objects (Ben Schwartz)
 
 * [Martin Duke] Proxy discovery was out of scope in this charter. We can recharter, but I am wondering if this is the right venue.
-* [Tommy Pauly] Thanks for bringing this up. I feel like I should like this direction, but I am not convinced of this particular shape. It's combining too many things in 1 JSON blob. Too much information that's not specific enough, but also not enough to be fully useful for each use caes. I think this makes sense for things that proxy e2e connections, but not OHTTP and DOH keys.
+* [Tommy Pauly] Thanks for bringing this up. I feel like I should like this direction, but I am not convinced of this particular shape. It's combining too many things in 1 JSON blob. Too much information that's not specific enough, but also not enough to be fully useful for each use case. I think this makes sense for things that proxy e2e connections, but not OHTTP and DOH keys.
 * [Tommy Pauly] Your key rotation scheme for each service is likely distributed and different, and now with this flat file you'd have to worry about all the services. We also won't have open proxies for these, as they also need authentication to be usable.
 * [Jonathan Lennox] I am dubious you can combine 4 WGs configuration languages.
 * [David Schinazi] I can kind of see how this is useful, but I can't see anyone actually using it.
