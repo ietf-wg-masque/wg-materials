@@ -22,14 +22,16 @@ Server-initiated services are out of scope. The working group will first deliver
 a requirements document for IP proxying. Once both are complete, the working group will focus on a protocol solution for
 IP proxying.
 
-The working group will consider fallback to versions of HTTPS that operate over TCP as a mitigation to UDP or HTTP/3
-blocking. Moreover, the working group will consider implications of tunneling protocols with congestion control and loss
-recovery over MASQUE, and may issue recommendations accordingly. New congestion control and loss recovery algorithms are
-out of scope.
+Exercising the extension points defined in the core documents is important to ensure their continued useability. The
+working group will consider extensions to the core proxying services as they relate to deploying MASQUE proxies for
+real world use cases. These extensions might include configuration or discovery mechanisms, authorization, transparent
+modification of proxied content, among others.
 
-Multicast support is out of scope. However, the group may specify extension points that would enable future work on
-multicast. Specifying proxy server discovery mechanisms is also out of scope. However, the group may consider features,
-such as proxy server identifiers, that aid future discovery mechanisms.
+The working group will consider fallback to versions of HTTPS that operate over TCP as a mitigation to UDP or HTTP/3
+blocking. Moreover, the working group will consider implications of tunneling protocols with congestion control and
+loss recovery over MASQUE, and may issue recommendations accordingly. New congestion control and loss recovery
+algorithms are out of scope. Multicast support is out of scope. However, the group may specify extension points that
+would enable future work on multicast.
 
 Impacts on address migration, NAT rebinding, and future multipath mechanisms of QUIC are not anticipated. However, the
 working group should document these impacts, or those of any other QUIC developments, if they arise.
