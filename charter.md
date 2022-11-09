@@ -29,7 +29,7 @@ modification of proxied content, among others.
 
 The working group will consider fallback to versions of HTTPS that operate over TCP as a mitigation to UDP or HTTP/3
 blocking. Moreover, the working group will consider implications of tunneling protocols with congestion control and
-loss recovery over MASQUE, and may issue recommendations accordingly. New congestion control and loss recovery
+loss recovery over MASQUE proxies, and may issue recommendations accordingly. New congestion control and loss recovery
 algorithms are out of scope. Multicast support is out of scope. However, the group may specify extension points that
 would enable future work on multicast.
 
