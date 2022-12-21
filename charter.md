@@ -22,16 +22,19 @@ Server-initiated services are out of scope. The working group will first deliver
 a requirements document for IP proxying. Once both are complete, the working group will focus on a protocol solution for
 IP proxying.
 
-Exercising the extension points defined in the core documents is important to ensure their continued useability. The
-working group will consider extensions to the core proxying services as they relate to deploying MASQUE proxies for
-real world use cases. These extensions might include configuration or discovery mechanisms, authorization, transparent
-modification of proxied content, among others.
+Exercising the extension points defined by CONNECT-UDP and CONNECT-IP is important to ensure their continued useability.
+The working group will consider extensions to these documents that provide missing functionality or enhance performance
+for real world use cases. The initial set of extensions will be in support of UDP listening, QUIC aware proxying, and
+datagram priorities. Extensions that help enable CONNECT-UDP or CONNECT-IP services to coordinate or work well in the
+ecosystem of other services may be considered. Extensions to HTTP/3 Datagrams will be coordinated with HTTPBIS.
+Extensions that solely relate to generic proxying functionality, and are not specific to the core MASQUE documents, are
+out of scope.
 
 The working group will consider fallback to versions of HTTPS that operate over TCP as a mitigation to UDP or HTTP/3
-blocking. Moreover, the working group will consider implications of tunneling protocols with congestion control and
-loss recovery over MASQUE proxies, and may issue recommendations accordingly. New congestion control and loss recovery
-algorithms are out of scope. Multicast support is out of scope. However, the group may specify extension points that
-would enable future work on multicast.
+blocking. Specifying proxy server discovery mechanisms is also out of scope. Moreover, the working group will consider
+implications of tunneling protocols with congestion control and loss recovery over MASQUE proxies, and may issue
+recommendations accordingly. New congestion control and loss recovery algorithms are out of scope. Multicast support is
+out of scope. However, the group may specify extension points that would enable future work on multicast.
 
 Impacts on address migration, NAT rebinding, and future multipath mechanisms of QUIC are not anticipated. However, the
 working group should document these impacts, or those of any other QUIC developments, if they arise.
