@@ -26,7 +26,7 @@ Exercising the extension points defined by CONNECT-UDP and CONNECT-IP is importa
 The working group will consider extensions to these documents that provide missing functionality or enhance performance
 for real world use cases. The initial set of extensions will be in support of UDP listening, QUIC-aware proxying, and
 datagram priorities. Extensions that help enable CONNECT-UDP or CONNECT-IP services to coordinate or work well in the
-ecosystem of other services may be considered. Extensions to HTTP/3 Datagrams will be coordinated with HTTPBIS.
+ecosystem of other services may be considered. Extensions to HTTP Datagrams will be coordinated with HTTPBIS.
 Extensions that solely relate to generic proxying functionality, and are not specific to the core MASQUE documents, are
 out of scope.
 
