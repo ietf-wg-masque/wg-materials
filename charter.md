@@ -20,20 +20,27 @@ MASQUE. The group will specify HTTP and/or HTTP/3 extensions to enable this func
 The group will focus on extensions for a limited set of client-initiated services: (1) UDP CONNECT and (2) IP proxying.
 Server-initiated services are out of scope.
 
-Exercising the extension points defined by CONNECT-UDP and CONNECT-IP helps make it easier to support new use cases or
-accommodate changes in the environment in which these protocols are deployed. As such, the working group will consider
-adopting an extension to these documents when it provides missing functionality or otherwise eases deployability for
-use cases, where there are multiple implementation and/or deployment proponents. The initial set of extensions will be
-in support of UDP listening and QUIC-aware proxying. Additional extensions that help enable CONNECT-UDP or CONNECT-IP
-services to coordinate or work well in the ecosystem of other services may be considered. Extensions to HTTP Datagrams
-will be coordinated with HTTPBIS. Extensions that solely relate to generic proxying functionality, and are not specific
-to the core MASQUE documents, are out of scope.
+Exercising the extension points defined by CONNECT-UDP and CONNECT-IP helps to make it easier to support new use cases
+or accommodate changes in the environment in which these protocols are deployed. The initial set of extensions will be
+in support of UDP listening and QUIC-aware proxying. Additional extensions that provide missing functionality, improve
+performance, or otherwise ease deployability for use cases may be adopted where there are multiple implementation
+and/or deployment proponents. 
 
-The working group will consider fallback to versions of HTTP that operate over TCP as a mitigation to UDP or HTTP/3
-blocking. Specifying proxy server discovery mechanisms is out of scope. New congestion control and loss recovery
-algorithms are also out of scope. However, the working group will consider implications of tunneling protocols with
-congestion control and loss recovery over MASQUE proxies, and may issue recommendations accordingly. Finally, multicast
-support is out of scope, though the group may specify extension points that would enable future work on multicast.
+Extensions to HTTP Datagrams will be coordinated with HTTPBIS. Extensions that solely relate to generic proxying
+functionality, and are not specific to the core MASQUE documents, are out of scope. 
+
+Specifying proxy server discovery mechanisms is out of scope. New congestion control and loss recovery algorithms are
+also out of scope. However, the working group will consider implications of tunneling protocols with congestion control
+and loss recovery over MASQUE proxies, and may issue recommendations accordingly. 
+
+The working group will consider how the protocols it defines might operate over versions of HTTP that use TCP rather
+than QUIC, for use when QUIC is unavailable. This might include defining alternative extensions specifically for use in
+these HTTP versions.
+
+Multicast is out of scope. Extensions providing generic capabilities that might include multicast are acceptable on the
+basis of their application to other use cases. For example, a generic IP proxy might be used for both unicast and
+multicast communication. For such generic capabilities, designs will not explicitly preclude multicast, but they will
+not focus on multicast-specific features.
 
 Impacts on address migration, NAT rebinding, and future multipath mechanisms of QUIC are not anticipated. However, the
 working group should document these impacts, or those of any other QUIC developments, if they arise.
