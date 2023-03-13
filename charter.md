@@ -18,7 +18,8 @@ multiple proxied stream- and datagram-based flows inside an HTTP connection. The
 MASQUE. The group will specify HTTP and/or HTTP/3 extensions to enable this functionality.
 
 The group will focus on extensions for a limited set of client-initiated services: (1) UDP CONNECT and (2) IP proxying.
-Server-initiated services are out of scope.
+MASQUE is only chartered to work on services that the client requests from the proxy.
+Services that the proxy initiates without any prompt from the client are out of scope.
 
 Exercising the extension points defined by CONNECT-UDP and CONNECT-IP helps to make it easier to support new use cases
 or accommodate changes in the environment in which these protocols are deployed. The initial set of extensions will be
