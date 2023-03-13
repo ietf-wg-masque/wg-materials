@@ -38,7 +38,7 @@ The working group will consider how the protocols it defines might operate over 
 than QUIC, for use when QUIC is unavailable. This might include defining alternative extensions specifically for use in
 these HTTP versions.
 
-Multicast is out of scope. Extensions providing generic capabilities that might include multicast are acceptable on the
+IP multicast is out of scope. Extensions providing generic capabilities that might include IP multicast are acceptable on the
 basis of their application to other use cases. For example, a generic IP proxy might be used for both unicast and
 multicast communication. For such generic capabilities, designs will not explicitly preclude multicast, but they will
 not focus on multicast-specific features.
