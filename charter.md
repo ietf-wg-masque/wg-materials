@@ -17,8 +17,8 @@ The primary goal of this working group is to develop mechanism(s) that allow con
 multiple proxied stream- and datagram-based flows inside an HTTP connection. These mechanism(s) are collectively called
 MASQUE. The group will specify HTTP and/or HTTP/3 extensions to enable this functionality.
 
-The group will focus on extensions for a limited set of client-initiated services: (1) UDP CONNECT and (2) IP proxying.
-MASQUE is only chartered to work on services that the client requests from the proxy.
+Since the MASQUE working group already delivered protocol solutions for CONNECT-UDP and CONNECT-IP,
+the group will now focus on extensions for these two client-initiated services.
 Services that the proxy initiates without any prompt from the client are out of scope.
 
 Exercising the extension points defined by CONNECT-UDP and CONNECT-IP helps to make it easier to support new use cases
