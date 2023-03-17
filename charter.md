@@ -3,21 +3,14 @@
 Many network topologies lead to situations where transport protocol proxying is beneficial. For example, proxying
 enables endpoints to communicate when end-to-end connectivity is not possible or to apply additional encryption where
 desirable (such as a VPN). Proxying can also improve client privacy, e.g., by hiding a client's IP address from a
-target server.
-
-Proxying technologies such as SOCKS and HTTP(S) CONNECT exist, albeit with their own shortcomings. For example, SOCKS
-signalling is not encrypted and HTTP CONNECT is currently limited to TCP. In contrast, HTTP/3 is a viable candidate
-protocol for proxying arbitrary traffic, as it provides a single connection with secure connectivity, multiplexed
-streams, address migration, and a unified congestion controller. An HTTP/3 datagram construct built on top of QUIC
-datagram frames provides for unreliable data transmission and enables transporting UDP and other unreliable flows via a
-proxy. Moreover, it avoids introducing potentially redundant or unnecessary recovery mechanisms. Lastly, HTTP supports
-an established request/response semantic that can set up and configure flows for different services.
+target server. Proxying technologies such as SOCKS and HTTP(S) CONNECT exist, albeit with their own shortcomings. For
+example, SOCKS signalling is not encrypted and HTTP CONNECT is currently limited to TCP.
 
 The primary goal of this working group is to develop mechanism(s) that allow configuring and concurrently running
 multiple proxied stream- and datagram-based flows inside an HTTP connection. The group has specified CONNECT-UDP and
 CONNECT-IP, collectively known as MASQUE, to enable this functionality. MASQUE leverages the HTTP request/response
-semantics, multiplexes flows over streams, encrypts flow metadata, and enables unreliable delivery suitable to UDP and
-IP-based applications.
+semantics, multiplexes flows over streams, uses a unified congestion controller, encrypts flow metadata, and enables
+unreliable delivery suitable for UDP and IP-based applications.
 
 The MASQUE working group will now develop HTTP and/or HTTP/3 extensions to the core client-initiated CONNECT-UDP and
 CONNECT-IP functionality. Services that a proxy initiates without any prompt from a client are out of scope.
