@@ -26,5 +26,5 @@
 
 ## Other Individual Drafts (Remaining Time)
 
-- [Communicating Proxy Configurations in Provisioning Domains](Communicating Proxy Configurations in Provisioning Domains) - _Tommy Pauly_, 15 minutes
+- [Communicating Proxy Configurations in Provisioning Domains](https://datatracker.ietf.org/doc/draft-pauly-intarea-proxy-config-pvd/) - _Tommy Pauly_, 15 minutes
 - [Proxying Ethernet in HTTP](https://datatracker.ietf.org/doc/draft-asedeno-masque-connect-ethernet/) - _Alejandro Sedeño_, 15 minutes
