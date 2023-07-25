@@ -1,6 +1,4 @@
 # MASQUE IETF 117
-
-## MASQUE IETF 117
 Monday, July 24, 2023, 09:30 - 11:30, Monday Session I
 
 - MASQUE Logo (badge) was designed.
