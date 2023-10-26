@@ -26,5 +26,3 @@
 - [Proxying Ethernet in HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-ethernet/) - _Alejandro Sedeño_, 30 minutes
 
 ## Other Individual Drafts (Remaining Time)
-
-- [Communicating Proxy Configurations in Provisioning Domains](https://datatracker.ietf.org/doc/draft-pauly-intarea-proxy-config-pvd/) - _Tommy Pauly_, 15 minutes
