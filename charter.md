@@ -13,13 +13,19 @@ semantics, multiplexes flows over streams, uses a unified congestion controller,
 unreliable delivery suitable for UDP and IP-based applications.
 
 The MASQUE working group will now develop HTTP and/or HTTP/3 extensions to the core client-initiated CONNECT-UDP and
-CONNECT-IP functionality. Services that a proxy initiates without any prompt from a client are out of scope.
+CONNECT-IP functionality. 
+
+Additionally, some network topologies service clients that want to carry layer 2 frames without encapsulating them
+within IP, avoiding packet size bloat or a reduction in space available for application data. To enable this, the
+working group will deliver a protocol solution for Ethernet proxying.
+
+Services that a proxy initiates without any prompt from a client are out of scope.
 
 Exercising the extension points defined by CONNECT-UDP and CONNECT-IP helps to make it easier to support new use cases
 or accommodate changes in the environment in which these protocols are deployed. The initial set of extensions will be
 in support of UDP listening and QUIC-aware proxying. Additional extensions that provide missing functionality, improve
 performance, or otherwise ease deployability for use cases may be adopted where there are multiple implementation
-and/or deployment proponents. 
+and/or deployment proponents.
 
 Extensions to HTTP Datagrams will be coordinated with HTTPBIS. Extensions that solely relate to generic proxying
 functionality, and are not specific to the core MASQUE documents, are out of scope. 
