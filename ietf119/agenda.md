@@ -21,7 +21,7 @@
 
 ## Working Group Documents (75 minutes)
 
-- [QUIC-Aware Proxying Using HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-quic-proxy/) - _Tommy Pauly_, 25 minutes
+- [QUIC-Aware Proxying Using HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-quic-proxy/) - _Tommy Pauly and Eric Rosenberg_, 25 minutes
 - [Proxying Listener UDP in HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-udp-listen/) - _Abhijit Singh_, 25 minutes
 - [Proxying Ethernet in HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-ethernet/) - _Alejandro Sedeño_, 25 minutes
 
