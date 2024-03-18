@@ -25,4 +25,6 @@
 - [Proxying Listener UDP in HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-udp-listen/) - _Abhijit Singh_, 25 minutes
 - [Proxying Ethernet in HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-ethernet/) - _Alejandro Sedeño_, 25 minutes
 
-## Other Individual Drafts (Remaining Time)
+## As Time Permits (Remaining Time)
+
+- In-band DNS Information Exchange - _David Schinazi_, 10 minutes
