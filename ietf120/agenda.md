@@ -3,7 +3,7 @@
 ## Time and Date
 
 * Tuesday, July 23, 2024, 15:30 - 17:00, Tuesday Session III ([See this time in your local timezone](https://www.timeanddate.com/worldclock/fixedtime.html?msg=MASQUE+120&iso=20240724T1530&p1=256))
-* Location: [Plaza Terrace Room](https://datatracker.ietf.org/meeting/120/floor-plan?room=regency-a-b)
+* Location: [Regency A/B](https://datatracker.ietf.org/meeting/120/floor-plan?room=regency-a-b)
 * [IETF Agenda Link](https://datatracker.ietf.org/meeting/120/agenda/?show=masque)
 
 ## Links
