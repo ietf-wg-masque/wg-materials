@@ -24,7 +24,7 @@
 - [Proxying Listener UDP in HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-udp-listen/) - _Abhijit Singh_, 20 minutes
 - [QUIC-Aware Proxying Using HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-quic-proxy/) - _Eric Rosenberg_, 20 minutes
 - [Proxying Ethernet in HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-ethernet/) - _Alejandro Sedeño_, 20 minutes
-- [DNS Configuration for Proxying IP in HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-ip-dns/) - _David Schinazi_, 20 minutes
+- [DNS Configuration for Proxying IP in HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-ip-dns/) - _Yaroslav Rosomakho_, 20 minutes
 
 ## As Time Permits
 
