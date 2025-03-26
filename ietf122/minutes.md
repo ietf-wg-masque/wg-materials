@@ -54,7 +54,7 @@ Lucas: Haven't read the document in a while, there are some obvious questions th
 
 Eric R: That'd be great.
 
-Marcus Ihlar: We have an implemenation of scramble, but haven't tested it with anyone yet, so would be happy to do and maybe the next hackathon is a good opportunity to do that.
+Marcus Ihlar: We have an implementation of scramble, but haven't tested it with anyone yet, so would be happy to do and maybe the next hackathon is a good opportunity to do that.
 
 Tommy Pauly: Looking at the issue list. We definitely have issues open, some require discussion. Need to close them out or adjust text. I think there aren't any large design gaps left. Please as you're reading, file issues for anything confusing.
 
@@ -68,7 +68,7 @@ Looking for interop, not much update, is it time for WGLC?
 
 Eric K: Same question, any other implementors ?
 
-Marcus Ihlar: Techinical issues overlapping the hackathon this time, but last time got interop and would like to do something more proper.
+Marcus Ihlar: Technical issues overlapping the hackathon this time, but last time got interop and would like to do something more proper.
 
 Eric K: Seems like a couple of implementations and sounds like we should start WGLC, similar to first one.
 
@@ -78,7 +78,7 @@ Eric K: Good point, yes sending to IEEE as well.
 
 Craig Taylor: I do intend to raise an issue surrounding MTU, which we spoke about directly, but don't think it will be material with the process.
 
-Gorry: We've been talking about ethernet for a while here, we should get a review from INT area?
+Gorry: We've been talking about Ethernet for a while here, we should get a review from INT area?
 
 ### [DNS Configuration for Proxying IP in HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-ip-dns/) - Yaroslav Rosomakho
 
@@ -86,7 +86,7 @@ David: I'm also planning to implement this, ideally by the next hackathon. When 
 
 Ben Schwartz: I don't see the value in DNS request. I would just eliminate it.
 
-Yaroslav: Do you mean eliminate DNS copletely?
+Yaroslav: Do you mean eliminate DNS completely?
 
 Ben: Yes, eliminate the entire DNS request capsule and just send DNS assign unconditionally. If you want an expression of support, you can negotiate that as a feature negotiation. But I'm not even sure you need that, if the recipient doesn't support it.
 
@@ -96,7 +96,7 @@ Ben: I understand that in principle, but it's not done in any other DNS configur
 
 There's no great value in saving a certain amount of data in the assign response. I'm not even sure it saves data on net, since you have to send more data in the dns request capsule to get less data in the dns assign response. It's already very small. The DNS request capsule is likely to indicate support for a range of things. I would model this on IPSEC or DHCP or IPv6 RA.
 
-David: That's actually incorrect. IKEv2 requests it. I think it's a reasonable question to ask, but there is prior art on this particular approach being taken. I think there is some value in sending less to suport it. If you just assign things that aren't supported, then they'll get dropped, which isn't horrible. If you're making a count of what clients are using what DNS servers.
+David: That's actually incorrect. IKEv2 requests it. I think it's a reasonable question to ask, but there is prior art on this particular approach being taken. I think there is some value in sending less to support it. If you just assign things that aren't supported, then they'll get dropped, which isn't horrible. If you're making a count of what clients are using what DNS servers.
 
 Ben: You get that from DNS servers, you'll see what's getting used.
 
@@ -124,7 +124,7 @@ Antoine Fressancourt: There is a privacy oriented research group. If we can't ta
 
 David: Good idea.
 
-Yaroslav: I think since there's quite a bit of rich history behind MASQUE, there;s a bunch of confusion what does it actually mean. If I speak to another vendor, and vendor says I support masquey, doesn't mean that it will interop. Another dimension here is that there are privacy use cases for MASQUE. There are also enterprise VPN style use cases. Perhaps we should split this into a few lanes. Privacy properties of MASQUE. Second, more technical ones of what does MASQUE actually mean.
+Yaroslav: I think since there's quite a bit of rich history behind MASQUE, there;s a bunch of confusion what does it actually mean. If I speak to another vendor, and vendor says I support masque, doesn't mean that it will interop. Another dimension here is that there are privacy use cases for MASQUE. There are also enterprise VPN style use cases. Perhaps we should split this into a few lanes. Privacy properties of MASQUE. Second, more technical ones of what does MASQUE actually mean.
 
 David: My focus is the privacy use case.
 
@@ -146,7 +146,7 @@ Mike Bishop: As you note, this is not explicitly in the charter. The charter doe
 
 Lucas Pardue: I've said I support this. I think it's a great opportunity. I've worked on MASQUE and I have to explain over and over to people what it means and what we're doing. It continues to expand in various ways. Just this week I was reading something on hacker news, a university student was trying to reverse-engineer Cloudflare's VPN software that had moved from wireguard to MASQUE. They were confused by what it meant. Even then, we weren't doing CONNECT-IP, we do a slightly vendor-specific thing. The principles of the MASQUE proxy do apply, it's just some specific details that are different, and it's all of that nuance that confuses people. Assuming that we're going to finish up MASQUE, it would be nice to have a document that explains what we did and also how you continue the work of MASQUE-like things. What would you do for those? This document could provide some framework for design principles.
 
-Eric K: One of the things we did early on in this group, was write a requirements document, but then we parked it, so there's plenty of precent for kind of looking at what is the shape of the thing that we are building.
+Eric K: One of the things we did early on in this group, was write a requirements document, but then we parked it, so there's plenty of precedent for kind of looking at what is the shape of the thing that we are building.
 
 David: Ah, I had forgotten about that, yeah we didn't publish that.
 
@@ -158,17 +158,17 @@ David: What we deployed with multiple hops was nested. Whereas for something lik
 
 So that's going to be an interesting case study for sure, but how long it'll take to figure it out is an open one. If there are volunteers, I'm happ to work with you on that for sure.
 
-Ben Schwartz: I think the idea of a history doc is much more difficult. Success has a thousand fathers. There are a lot of people who would want a piece of credit for this. I think that this is better kept out of the RFC series. I think there;s a parallel to WebRTC where the group worked in RTC, WebRTC, W3C took a bunch of some new, some existing technologies, produced a whole feet of RFCs and ultimately these ended up being well known puvlicing under the brand WebRTC, even whein cases where the web was involved. My personal preference would be to say MASQUE is the name of the WG, not the technologies, it is not a corporation, and it is going to be finished, it was a process, and what it did was that it did a number of HTTP exetsions and related technologies taht along with a bunch of other stuff provide a lot of useful capabilities related to proxying.
+Ben Schwartz: I think the idea of a history doc is much more difficult. Success has a thousand fathers. There are a lot of people who would want a piece of credit for this. I think that this is better kept out of the RFC series. I think there;s a parallel to WebRTC where the group worked in RTC, WebRTC, W3C took a bunch of some new, some existing technologies, produced a whole feet of RFCs and ultimately these ended up being well known publicizing under the brand WebRTC, even in cases where the web was involved. My personal preference would be to say MASQUE is the name of the WG, not the technologies, it is not a corporation, and it is going to be finished, it was a process, and what it did was that it did a number of HTTP extensions and related technologies that along with a bunch of other stuff provide a lot of useful capabilities related to proxying.
 
-David: Unforuntalely or forunately, MASQUE became a branch that I really don't want to throw it away. I'm biased. 
+David: Unfortunately or fortunately, MASQUE became a branch that I really don't want to throw it away. I'm biased. 
 
 Martin Duke: I don't think it matter where this is done, we can do it here, TSVWG, we could AD sponsor, we could do it in the ISE.
 
-Tommy Pauly: Some confusion outside the IETF when we talk about it. In terms of venue, let's do whatever makes sense. Don't love the ISE option. There are opinions, and this is a collboartive effort, and we have venues where we don't need IETF-wide protocol elve consensus that we can still publish something.
+Tommy Pauly: Some confusion outside the IETF when we talk about it. In terms of venue, let's do whatever makes sense. Don't love the ISE option. There are opinions, and this is a collaborative effort, and we have venues where we don't need IETF-wide protocol consensus that we can still publish something.
 
 David: Agreed, ISE is a backup, but people seem to care.
 
-Tommy: About Tor, it's super interesting, but not sure it belongs here. I could see two documents and that would very researchy and very pearrg. I could also see this be pearrg. Probably a lot of people from here will go to pearrg, so we should discuss with those RG chairs.
+Tommy: About Tor, it's super interesting, but not sure it belongs here. I could see two documents and that would very researchy and very pearg. I could also see this be pearrg. Probably a lot of people from here will go to pearrg, so we should discuss with those RG chairs.
 
 David: IRTF has chairs deciding what to adopt, so that may make sense.
 
@@ -180,19 +180,19 @@ Eric K: We have some history of doing applicability documents. We can say this i
 
 David: On the point of if we want to do it here, I want to punt it until we talk to pearrg chairs but if we decided we should do it over there and they;re like no, I'd rather get a bine check.
 
-Eric K: Yeah I think we'll coordinate amongst the chairs and figure out how do we decide where things go.
+Eric K: Yeah I think we'll coordinate among the chairs and figure out how do we decide where things go.
 
-Ben: There is no singlular protocol that I can say "I implement MASQUE" and then we can interoperate. There is more work to do, and I think we should do that work.
+Ben: There is no singular protocol that I can say "I implement MASQUE" and then we can interoperate. There is more work to do, and I think we should do that work.
 
 David: I definitely don't want to boil the ocean. There's cool work in intarea about bootstrapping proxy configs. But yes, MASQUE does exist. If you look at WebRTC, it's also a collection of specs, e.g. JS API, then you need STUN, etc. As much as grand unified theory of MASQUE sounds cool, I don't want to put that here.
 
-Zahed: MASQUE is a number of protocols under an umbrella. I see some value of having MASQUE as defined as like an umbrella. I would like to have this talk about really very focused on the prodcution of the working group if we are doing it here. Mike could also decide to AD-sponsor the document and use this working group to be the place where we discuss it.
+Zahed: MASQUE is a number of protocols under an umbrella. I see some value of having MASQUE as defined as like an umbrella. I would like to have this talk about really very focused on the production of the working group if we are doing it here. Mike could also decide to AD-sponsor the document and use this working group to be the place where we discuss it.
 
 David: That's interesting, I see Mike nodding, I'll chat with Mike about that.
 
 Lucas: I have practical conflicts with pearg every single time, we have a room, this is an engineering working group, we have people who have built and deployed these things. Yes we would like privacy input, but that group doesn't seem the right place to articulate the engineering architectures that we have done and will continue to do. I could live with it anywhere, but unfortunately RGs end up taking lower priority than WGs for many folks.
 
-Yaroslav: There is an awful lot of combination of things taht fall into MASQUE, and they all have different properties. You can have a good or bad time depending on how you combine these things. So some recommendations for what to do could be very helpful. Encouraging implementors to make good choices has value.
+Yaroslav: There is an awful lot of combination of things that fall into MASQUE, and they all have different properties. You can have a good or bad time depending on how you combine these things. So some recommendations for what to do could be very helpful. Encouraging implementors to make good choices has value.
 
 David: BCP territory gets trickier, but good points.
 
@@ -203,4 +203,3 @@ Poll: This is a topic that I would be interesting in spending time discussing.
 Results: 37 yes, 2 no, 3 no opinion
 
 Eric K: Thank you for all the energy to making this all happen and we've built a whole bunch of stuff together, we'll take an action item to figure out where this should go.
-
