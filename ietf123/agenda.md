@@ -23,7 +23,11 @@
 ## Working Group Documents
 
 * [QUIC-Aware Proxying Using HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-quic-proxy/) - _Eric Rosenberg_, 15 minutes
+* [Proxying Listener UDP in HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-udp-listen/) - _Abhijit Singh_, 15 minutes
+* [Proxying Ethernet in HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-ethernet/) - _Alejandro Sedeño_, 15 minutes
+* [DNS Configuration for Proxying IP in HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-ip-dns/) - _Yaroslav Rosomakho_, 15 minutes
 
 ## As Time Permits
 
 * [ECN and DSCP support for HTTPS's Connect-UDP](https://datatracker.ietf.org/doc/draft-westerlund-masque-connect-udp-ecn-dscp/) - _Magnus Westerlund_, 15 minutes
+* [The MASQUE Proxy](https://datatracker.ietf.org/doc/draft-schinazi-masque-proxy/) - _David Schinazi_, 10 minutes
