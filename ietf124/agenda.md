@@ -17,7 +17,6 @@
 ## Administrivia (5 minutes)
 
 * Blue sheets / scribe selection / [NOTE WELL](https://www.ietf.org/about/note-well.html)
-* [IPR Disclosure related to draft-ietf-masque-quic-proxy](https://datatracker.ietf.org/ipr/6744/)
 * Agenda revision
 
 ## Working Group Documents
