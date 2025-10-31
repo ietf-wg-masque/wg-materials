@@ -21,8 +21,10 @@
 
 ## Working Group Documents
 
-* Rechartering, 30 minutes
+* WG Status & Rechartering, 30 minutes
+* [DNS and PREF64 Configuration for Proxying IP in HTTP](https://datatracker.ietf.org/doc/draft-ietf-masque-connect-ip-dns/) - _Yaroslav Rosomakho_, 10 minutes
 
 ## As Time Permits
 
+* [Reusable templates and checksum offload for CONNECT-IP](https://datatracker.ietf.org/doc/draft-rosomakho-masque-connect-ip-optimizations/) - _Yaroslav Rosomakho_, 20 minutes
 * [ECN and DSCP support for HTTPS's Connect-UDP](https://datatracker.ietf.org/doc/draft-westerlund-masque-connect-udp-ecn-dscp/) - _Magnus Westerlund_, 15 minutes
