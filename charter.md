@@ -12,7 +12,7 @@ The MASQUE working group is now in the process of completing its remaining deliv
  4. An extension to CONNECT-IP that allows conveying DNS and PREF64 configuration
  5. An informational architecture document about MASQUE
  6. An extension to CONNECT-UDP for ECN and DSCP support
- 7. An extensions to CONNECT-UDP and / or CONNECT-IP to enable compression
+ 7. An extension to CONNECT-UDP and / or CONNECT-IP to enable compression
  8. A definition of qlog nomenclature for existing MASQUE mechanisms
 
 These documents are being finished in line with MASQUE’s previous charter: 
