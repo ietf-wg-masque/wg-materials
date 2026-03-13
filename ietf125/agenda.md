@@ -15,6 +15,6 @@
 * Blue sheets / scribe selection / [NOTE WELL](https://www.ietf.org/about/note-well.html)
 * Agenda revision
 
-### Presnetations 
+### Presentations 
 
 * [draft-rosomakho-masque-connect-ip-optimizations-01](https://datatracker.ietf.org/doc/draft-rosomakho-masque-connect-ip-optimizations/) by Yaroslav Rosomakho (30 minutes)
