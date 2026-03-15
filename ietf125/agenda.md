@@ -18,4 +18,4 @@
 ### Presentations 
 
 * [draft-rosomakho-masque-connect-ip-optimizations-01](https://datatracker.ietf.org/doc/draft-rosomakho-masque-connect-ip-optimizations/) by Yaroslav Rosomakho (30 minutes)
-* [The MASQUE Architecture Draft](https://davidschinazi.github.io/masque-drafts/draft-schinazi-masque-proxy.html) by David Schinazi
+* [The MASQUE Architecture Draft](https://davidschinazi.github.io/masque-drafts/draft-schinazi-masque-proxy.html) by David Schinazi (15 minutes)
