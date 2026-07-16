@@ -12,14 +12,11 @@ CONNECT-IP, collectively known as MASQUE, to enable this functionality. MASQUE l
 semantics, multiplexes flows over streams, uses a unified congestion controller, encrypts flow metadata, and enables
 unreliable delivery suitable for UDP and IP-based applications.
 
-The MASQUE working group will now develop HTTP and/or HTTP/3 extensions to the core client-initiated CONNECT-UDP and
-CONNECT-IP functionality. Services that a proxy initiates without any prompt from a client are out of scope.
-
-Exercising the extension points defined by CONNECT-UDP and CONNECT-IP helps to make it easier to support new use cases
-or accommodate changes in the environment in which these protocols are deployed. The initial set of extensions will be
-in support of UDP listening and QUIC-aware proxying. Additional extensions that provide missing functionality, improve
-performance, or otherwise ease deployability for use cases may be adopted where there are multiple implementation
-and/or deployment proponents. 
+The MASQUE working group will complete its adopted documents, including an extension to CONNECT-UDP for ECN and DSCP
+support and an extension to HTTP Datagram protocols for compressing and deriving datagram fields. It may also adopt an
+informational document describing the MASQUE architecture and a document defining qlog events for the MASQUE protocols.
+The working group will not adopt any other work. Services that a proxy initiates without any prompt from a client are
+out of scope.
 
 Extensions to HTTP Datagrams will be coordinated with HTTPBIS. Extensions that solely relate to generic proxying
 functionality, and are not specific to the core MASQUE documents, are out of scope. 
